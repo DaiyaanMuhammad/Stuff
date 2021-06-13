@@ -66,7 +66,7 @@ else:
 #  So the varification continues for the other users even if login is successful. [  |---   |--- |---\   ]
 #  I'm sure this can be sloved through very simple solutions.                     [  |- .   |-   |    )  ]
 #  For now, this is the best I can do.                                            [  |  | X |--- |---/   ]
-                                                                                  [                      ]
+
 #V2 (13/6/2021)
 
 #  Now if you give a wrong usename at the start, it will not show the "Wrong username" logic
