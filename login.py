@@ -12,7 +12,11 @@
 users_with_passwords = {
         'Daiyaan':'Password',
         'Muhammad':'Password2',
-        'Fardeen':'Password3'
+        'Fardeen':'Password3',
+        'Mustafiz':'PasswordM',
+        'Fahim':'Islam',
+        'Vladmir':'Makarov',
+        'Someone':'Random'
 }
 
 # Right now we have 3 users. Although we can edit this .py file manually to add users and passwords. But it would be a security flow that will alow some users to see each others credentials.
