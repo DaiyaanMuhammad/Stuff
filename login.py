@@ -56,12 +56,15 @@ else:
  #                #
 ####################
 
-#  Right now the for loop causes the keys in users_with_passwords to repeat.
-#  So the varification continues for the other users even if login is successful.
-#  In simpler terms, the user varification even though is a success, the for loop forces the other incorrect keys to go through the validation process as well. Which are obviously not correct. 
-#  I'm sure this can be sloved through very simple solutions.
-#  For now, this is the best I can do.
+#V1 (11/6/2021)
 
+#  Right now the for loop causes the keys in users_with_passwords to repeat.      [                   ] 
+#  So the varification continues for the other users even if login is successful. [ |---   |--- |---\  ]
+#  I'm sure this can be sloved through very simple solutions.                     [ |- .   |-   |    )  ]
+#  For now, this is the best I can do.                                            [ |  | X |--- |---/  ]
 
+#V2 (13/6/2021)
+
+#  Now if you give a wrong usename at the start, it will not show the "Wrong username" logic
 
 
