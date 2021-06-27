@@ -13,46 +13,57 @@ users_with_passwords = {
         'Daiyaan':'Password',
         'Muhammad':'Password2',
         'Fardeen':'Password3',
-        'Mustafiz':'PasswordM',
+        'Mustafiz':'PasswordM',#---------------------------------------------------------> A dictionary to store the usernames and passwords
         'Fahim':'Islam',
         'Vladmir':'Makarov',
         'Someone':'Random'
 }
 
-# Right now we have 3 users. Although we can edit this .py file manually to add users and passwords. But it would be a security flow that will alow some users to see each others credentials.
+LogOrSign = input("Do you want to.. \n[1]Login or [2]Sign in\n--> ")#--------------------> Prompt to ask what the user wants to do
 
-print('Type "login" or "sign up"')
-login_or_signup = str(input())
+if (LogOrSign == '2'):#------------------------------------------------------------------> If the user chooses to Signup,
 
-if (login_or_signup == "login"):
-    login_username = str(input("Username: ")) #We ask for the Username 
-    for i in users_with_passwords.keys(): 
-        if (login_username == i):    #I initially tried to do if (login_password == "Username: " + i), but it was not the way. Although jupyter notebook showed me otherwise.
-            login_password = str(input("Password: ")) #We ask for the password.
+    new_user = str(input("Name for the new user:\n--> "))#-------------------------------> Ask user for the new user name
 
-            #Now the if the login_username is true, that variable should be a valid key of the dictionary. So we just index the value of the key by using the variable, not a constant value.
+    new_password = str(input("Password:\n--> "))#----------------------------------------> Ask the user for new password. But this is not a database. New users are not stored within this script
 
-            if (login_password == users_with_passwords[login_username]):   
-                print("Login successful!!")   #Login is a success. You can add other stuff after this.
-                break
-            else:
-                print("Username and password not same.")
-        elif (login_username != i):
-            continue
-        # The two upper lines (The elif one) contains some trial, failure and success codes.
-        # They are there because if the username is correct on the for loops first try, then it works perfectly.
-        # But if the username not the first one, the for loop goes through the keys and sees the input username is != to the keys.
-        # So from logic, for loops prints the 'Wrong username' everytime it encounters a wrong username. But the input username is also true, so it also asks for password which it should not do.
-        # So we use somethings called break and continue.
-        # If the login is successful, the loops breaks and doesn't check if the other 'i' values are matching or not
-        # If the input username is not matching with the first username in the users_with_passwords.keys(),
+    users_with_passwords[new_user]=new_password#-----------------------------------------> Add the username and the password in the dictionary
+
+    print("Sign in successful!! Loging in as", new_user)#--------------------------------> The new user is added. Now he can login.
+
+    client_value = str(input("Password: "))
+
+    if (users_with_passwords[new_user] == new_password):#--------------------------------> If the given password matches of the stored password, its a login
+
+        print("Login Successful!!")
+
+    else:
+
+        print('The password was wrong.')#------------------------------------------------> If they don't match, the password must be wrong.
+
+elif (LogOrSign == '1'):#----------------------------------------------------------------> Now if the user wants to login directly.
+
+    client_key = str(input("Username: "))#-----------------------------------------------> Ask for username
+
+    if client_key in users_with_passwords.keys():#---------------------------------------> If the username is in the dictionary,
+
+        client_value = str(input("Password: "))#-----------------------------------------> Ask for password.
+
+        if (users_with_passwords[client_key] == client_value):#--------------------------> If the given password matches the stored password,
+
+            print("Login Successful!!")#-------------------------------------------------> It's a login
+
         else:
-            print("Wrong username!")
-            break
-elif (login_or_signup == "sign up"):
-    print("We're sorry. This feature is coming soon!") #TODO
+
+            print("Wrong password")#-----------------------------------------------------> If the user is right but he typed the password wrong
+
+    else:
+
+        print("\"",client_key,"\"", "Was not found in the database")#--------------------> If the username was not found.
+
 else:
-    print("This is not debuging. Stop fooling around.")
+
+    print("Please input cautiously")#----------------------------------------------------> If the user chooses to act irratinal
 
 ####################
  #                #
@@ -69,6 +80,10 @@ else:
 
 #V2 (13/6/2021)
 
-#  Now if you give a wrong usename at the start, it will not show the "Wrong username" logic
+#  Now if you give a wrong usename at the start, it will not show the "Wrong username" logic [Fixed]
+
+#V3 (28/6/2021)
+
+# There is no known bug in this code. Just missing the comments.
 
 
