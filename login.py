@@ -1,9 +1,3 @@
-#####################################################################
-#                                                                                                  #
-#                        Making a login system with multiple users                                 #
-#                                                                                                  #
-####################################################################################################
-
 users_with_passwords = {
         'Daiyaan':'Password',
         'Muhammad':'Password2',
@@ -22,7 +16,7 @@ if (LogOrSign == '2'):
     users_with_passwords[new_user]=new_password
     print("Sign in successful!! Loging in as", new_user)
     client_value = input("Password: ")
-    if (users_with_passwords[new_user] == new_password):
+    if (users_with_passwords[new_user] == client_value):
         print("Login Successful!!")
     else:
         print('The password was wrong.')
@@ -38,26 +32,3 @@ elif (LogOrSign == '1'):
         print("\"",client_key,"\"", "Was not found in the database")
 else:
     print("Please input cautiously")
-
-####################
- #                #
- #      BUGS      #
- #                #
-####################
-
-#V1 (11/6/2021)
-
-#  Right now the for loop causes the keys in users_with_passwords to repeat.      [                      ] 
-#  So the varification continues for the other users even if login is successful. [  |---   |--- |---\   ]
-#  I'm sure this can be sloved through very simple solutions.                     [  |- .   |-   |    )  ]
-#  For now, this is the best I can do.                                            [  |  | X |--- |---/   ]
-
-#V2 (13/6/2021)
-
-#  Now if you give a wrong usename at the start, it will not show the "Wrong username" logic [Fixed]
-
-#V3 (28/6/2021)
-
-# There is no known bug in this code. Just missing the comments.
-
-
