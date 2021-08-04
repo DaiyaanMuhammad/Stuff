@@ -1,6 +1,9 @@
+#!/usr/bin/env python3
+
 print("\n")
-for i in range(0,8):
+for i in range(0,4):
     for j in range(0, 8):
-        result = (8*i) + j
-        print(f"\033[4{i};3{j}m","{:0>3d}".format(result), end = ' ')
-    print("\n", end='')
+        print(f"\033[4{j};3{j}m","   ", end = '')
+        print(f"\033[10{j};9{j}m","   ", end = '\033[40;30m   ')
+    print("")
+print("")
